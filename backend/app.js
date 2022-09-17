@@ -2,16 +2,17 @@ const express = require('express');
 const morgan = require('morgan');
 require('dotenv').config();
 
+//routers
+const workoutRoutes = require('./routes/workouts');
 //express
 const app = express();
 
 //middleware
+app.use(express.json()); //used for parsing req.body data (alternative for body-parser)
 app.use(morgan('dev'));
 
-//routes
-app.get('/', (req, res) => {
-    res.send("<h1>Hello, Majid</h1>");
-});
+//routers
+app.use('/api/workouts', workoutRoutes);
 
 
 
