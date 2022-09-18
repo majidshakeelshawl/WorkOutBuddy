@@ -1,5 +1,6 @@
 const express = require('express');
 const morgan = require('morgan');
+const mongoose = require('mongoose');
 require('dotenv').config();
 
 //routers
@@ -14,6 +15,9 @@ app.use(morgan('dev'));
 //routers
 app.use('/api/workouts', workoutRoutes);
 
-
-
-app.listen(process.env.PORT, () => console.log("Server started"));
+//connection to mongodb
+mongoose.connect(process.env.MONGO_URI)
+    .then(() => {
+        app.listen(process.env.PORT, () => console.log("Connected to db and Server started"));
+    })
+    .catch(err => console.log(err));
