@@ -6,9 +6,7 @@ const workoutController = require('../controllers/workoutController');
 //routes
 router.get('/', workoutController.getWorkouts);
 
-router.get('/:id', (req, res) => {
-    res.json({ "msg": "single workout" });
-});
+router.get('/:id', workoutController.getWorkout);
 
 router.post('/', workoutController.createWorkout);
 
