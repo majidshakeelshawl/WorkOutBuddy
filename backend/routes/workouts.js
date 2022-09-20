@@ -10,12 +10,8 @@ router.get('/:id', workoutController.getWorkout);
 
 router.post('/', workoutController.createWorkout);
 
-router.delete('/:id', (req, res) => {
-    res.json({ "msg": "delete workout" });
-});
+router.delete('/:id', workoutController.deleteWorkout);
 
-router.patch('/:id', (req, res) => {
-    res.json({ "msg": "edit a workout" });
-});
+router.patch('/:id', workoutController.updateWorkout);
 
 module.exports = router;
