@@ -1,16 +1,18 @@
 import { useEffect, useState } from "react";
 import WorkoutDetails from "../components/workout-details/WorkoutDetails";
+import { useWorkoutsContext } from '../hooks/useWorkouts.context';
 import WorkoutForm from "../components/workouts-form/WorkoutsForm";
 
 const Home = () => {
-    const [workouts, setWorkouts] = useState(null);
+    const { workouts, dispatch } = useWorkoutsContext();
+
     useEffect(() => {
         const fetchWorkouts = () => {
             fetch('/api/workouts/')
                 .then(response => response.json())
                 .then(data => {
-                    setWorkouts(data)
-                    console.log(data)
+                    //set workouts is for getting all the workouts on the UI not adding new (that's create workout)
+                    dispatch({ type: 'SET_WORKOUTS', payload: data });
                 })
                 .catch(err => console.log(err))
         }
