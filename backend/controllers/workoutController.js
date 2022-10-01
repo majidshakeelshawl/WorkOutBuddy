@@ -54,7 +54,7 @@ const deleteWorkout = async (req, res) => {
         // check if there was a workout to be updated if not it will be null
         if (!workout)
             res.status(404).json({ error: "No such workout" });
-        res.status(200).json({ message: "Workout deleted" });
+        res.status(200).json(workout);
     }
     catch (err) {
         res.status(404).json({ error: err.message });
