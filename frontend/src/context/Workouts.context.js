@@ -14,6 +14,11 @@ export const workoutsReducer = (state, action) => {
                 workouts: [action.payload, ...state.workouts],
             }
         // since we are returning we do not need break;
+        case 'DELETE_WORKOUT':
+            console.log(action.payload);
+            return {
+                workouts: state.workouts.filter((workout) => workout._id !== action.payload._id),
+            }
         default:
             return state;
     }
