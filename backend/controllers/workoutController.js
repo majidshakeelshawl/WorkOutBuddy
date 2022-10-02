@@ -41,8 +41,10 @@ const createWorkout = async (req, res) => {
         emptyFields.push('load');
     if (!reps)
         emptyFields.push('reps');
-    if (emptyFields.length > 0)
+    if (emptyFields.length > 0) {
         res.status(400).json({ error: 'Enter all the required fields', emptyFields });
+        return // it was executing the code below hence I used return
+    }
 
     try {
         const workout = await Workout.create({ title, load, reps });
