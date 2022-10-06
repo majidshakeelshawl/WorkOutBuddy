@@ -5,6 +5,7 @@ require('dotenv').config();
 
 //routers
 const workoutRoutes = require('./routes/workouts');
+const userRoutes = require('./routes/user');
 //express
 const app = express();
 
@@ -14,6 +15,7 @@ app.use(morgan('dev'));
 
 //routers
 app.use('/api/workouts', workoutRoutes);
+app.use('/api/user', userRoutes);
 
 //connection to mongodb
 mongoose.connect(process.env.MONGO_URI)
