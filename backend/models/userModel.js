@@ -19,17 +19,21 @@ const userSchema = Schema(
 );
 
 userSchema.statics.signup = async function (email, password) {
+
     //Check for valid email and strong password
     if (!email || !password)
-        throw Error("Both email and password field must be filled");
+        throw Error("Both email and password fields must be filled");
     if (!validator.isEmail(email))
         throw Error("Enter a valid email");
     if (!validator.isStrongPassword(password))
         throw Error("Password is not Strong");
+
+    //Check if email exists
     const emailsExists = await this.findOne({ email });
     if (emailsExists)
         throw Error("Email already in use");
 
+    //Encrypt
     const salt = await bcrypt.genSalt(10);
     const hash = await bcrypt.hash(password, salt);
 
