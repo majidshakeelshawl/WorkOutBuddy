@@ -17,7 +17,22 @@ const userSchema = Schema(
         }
     }
 );
+userSchema.statics.signin = async function (email, password) {
+    //check if both fields are filled
+    if (!email || !password)
+        throw Error('Both email and password fields must be filled');
 
+    const user = await this.findOne({ email });
+    if (!user)
+        throw Error("Email does not exist");
+
+    const match = await bcrypt.compare(password, user.password);
+    if (!match)
+        throw Error("Incorrect password");
+
+    return user;
+
+}
 userSchema.statics.signup = async function (email, password) {
 
     //Check for valid email and strong password
