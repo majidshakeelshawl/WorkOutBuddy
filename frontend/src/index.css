@@ -143,3 +143,7 @@ form.login {
   background: #fff;
   border-radius: 4px;
 }
+
+.logged-in-user-email-nav {
+  margin: 30px;
+}
