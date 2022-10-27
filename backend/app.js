@@ -23,3 +23,5 @@ mongoose.connect(process.env.MONGO_URI)
         app.listen(process.env.PORT, () => console.log("Connected to db and Server started"));
     })
     .catch(err => console.log(err));
+
+module.exports = app;    
