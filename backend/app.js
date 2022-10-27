@@ -20,8 +20,10 @@ app.use('/api/user', userRoutes);
 //connection to mongodb
 mongoose.connect(process.env.MONGO_URI)
     .then(() => {
-        app.listen(process.env.PORT, () => console.log("Connected to db and Server started"));
+        app.listen(process.env.PORT
+            , () => console.log("Connected to db and Server started")  //COMMENT OUT THIS LINE TO PASS TESTS (JEST)
+        );
     })
     .catch(err => console.log(err));
 
-module.exports = app;    
+module.exports = app;
