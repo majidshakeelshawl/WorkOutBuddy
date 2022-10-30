@@ -26,4 +26,11 @@ mongoose.connect(process.env.MONGO_URI)
     })
     .catch(err => console.log(err));
 
-module.exports = app;
+async function mongooseDisconnect() {
+    await mongoose.disconnect();
+}
+
+module.exports = {
+    app,
+    mongooseDisconnect,
+};
