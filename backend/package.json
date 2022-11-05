@@ -4,9 +4,9 @@
   "description": "backend for workoutbuddy app",
   "main": "app.js",
   "scripts": {
-    "test": "jest",
-    "jest-watch": "jest --watch",
-    "start": "nodemon app.js"
+    "start": "node app.js",
+    "watch": "nodemon app.js",
+    "test": "jest --watchAll --testTimeout=10000"
   },
   "author": "majidshakeelshawl",
   "license": "ISC",

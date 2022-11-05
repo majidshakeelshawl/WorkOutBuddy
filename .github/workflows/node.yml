@@ -1,0 +1,6 @@
+name: Workout Buddy CI
+
+on:
+  push:
+    branches:[main]
+
