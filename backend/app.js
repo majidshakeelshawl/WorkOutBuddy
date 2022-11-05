@@ -27,7 +27,8 @@ app.get("/*", (req, res) => {
 mongoose.connect(process.env.MONGO_URI)
     .then(() => {
         app.listen(process.env.PORT
-            , () => console.log("Connected to db and Server started")  //COMMENT OUT THIS LINE TO PASS TESTS (JEST)
+            ,//COMMENT OUT THIS LINE TO PASS TESTS (JEST)
+            () => console.log(`Connected to db and Server started and server listening at PORT ${process.env.PORT}`)
         );
     })
     .catch(err => console.log(err));

@@ -1,6 +1,6 @@
-name: Workout Buddy CI
+# name: Workout Buddy CI
 
-on:
-  push:
-    branches:[main]
+# on:
+#   push:
+#     branches:[main]
 
