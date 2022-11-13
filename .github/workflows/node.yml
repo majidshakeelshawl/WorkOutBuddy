@@ -7,7 +7,7 @@ on:
 jobs:
   build:
     env:
-      CI: true
+      # CI: true commented this out to see if the other way works (line 32)
       MONGO_URI: mongodb://localhost/workoutBuddy
       SECRET: randomtestsecret
       TEST_EMAIL: test@t.com
@@ -29,5 +29,5 @@ jobs:
           mongodb-version: ${{ matrix.mongodb-version }}
       - run: npm install
       - run: npm run build --prefix frontend
-      - run: npm run test
+      - run: CI=true npm run test
 
