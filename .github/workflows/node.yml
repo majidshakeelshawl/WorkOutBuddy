@@ -6,12 +6,6 @@ on:
     branches: [main]
 jobs:
   build:
-    env:
-      # CI: true commented this out to see if the other way works (line 32)
-      MONGO_URI: mongodb://localhost/workoutBuddy
-      SECRET: randomtestsecret
-      TEST_EMAIL: test@t.com
-      TEST_PASSWORD: ABCabc123.
     strategy:
       matrix:
         node-version: [14.x, 16.x]
@@ -29,5 +23,11 @@ jobs:
           mongodb-version: ${{ matrix.mongodb-version }}
       - run: npm install
       - run: npm run build --prefix frontend
-      - run: CI=true npm run test
+      - run: npm run test
+    env:
+      CI: true
+      MONGO_URI: mongodb://localhost/workoutBuddy
+      SECRET: randomtestsecret
+      TEST_EMAIL: test@t.com
+      TEST_PASSWORD: ABCabc123.
 
