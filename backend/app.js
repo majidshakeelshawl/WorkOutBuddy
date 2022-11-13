@@ -28,7 +28,7 @@ mongoose.connect(process.env.MONGO_URI)
     .then(() => {
         app.listen(process.env.PORT
             //Comment out console.log if any error occurs for JEST
-            //,() => console.log(`Connected to db and Server started and server listening at PORT ${process.env.PORT}`)
+            , () => console.log(`Connected to db and Server started and server listening at PORT ${process.env.PORT}`)
         );
     })
     .catch(err => console.log(err));
