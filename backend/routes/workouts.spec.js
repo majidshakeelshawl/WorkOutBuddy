@@ -8,7 +8,8 @@ let token;
 
 async function currentUser() {
     const response = await request(app)
-        .post('/api/user/login') //here we need to hit end points because supertest runs our app internally
+        //here we need to hit end points because(not full url i.e from localhost://api/) supertest runs our app internally
+        .post('/api/user/signup')
         .send({
             email: process.env.TEST_EMAIL,
             password: process.env.TEST_PASSWORD
