@@ -9,6 +9,9 @@ jobs:
     env:
       CI: true
       MONGO_URI: mongodb://localhost/workoutBuddy
+      SECRET: randomtestsecret
+      TEST_EMAIL: test@t.com
+      TEST_PASSWORD: ABCabc123.
     strategy:
       matrix:
         node-version: [14.x, 16.x]
