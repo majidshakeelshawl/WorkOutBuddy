@@ -27,4 +27,8 @@ jobs:
     env:
       CI: true
       MONGO_URI: mongodb://localhost/workoutBuddy
+      # using Github secrets feature to store secrets and accessing using secrets object
+      SECRET: ${{ secrets.SECRET }}
+      TEST_EMAIL: $${{ secrets.TEST_EMAIL }}
+      TEST_PASSWORD: $${{ secrets.TEST_PASSWORD }}
 
