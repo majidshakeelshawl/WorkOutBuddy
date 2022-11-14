@@ -9,7 +9,7 @@ let token;
 async function currentUser() {
     const response = await request(app)
         //here we need to hit end points because(not full url i.e from localhost://api/) supertest runs our app internally
-        .post('/api/user/signup')
+        .post('/api/user/signup') // I'm using signup for the Github actions because we are creating new database for every new action
         .send({
             email: process.env.TEST_EMAIL,
             password: process.env.TEST_PASSWORD
