@@ -21,11 +21,11 @@ jobs:
         uses: supercharge/mongodb-github-action@1.8.0
         with:
           mongodb-version: ${{ matrix.mongodb-version }}
-      - run: npm install
+      - run: npm ci
       - run: npm run build --prefix frontend
       - run: npm run test
     env:
-      CI: true
+      # CI: true
       MONGO_URI: mongodb://localhost/workoutBuddy
       SECRET: randomtestsecret
       TEST_EMAIL: test@t.com
