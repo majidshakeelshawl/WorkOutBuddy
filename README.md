@@ -1,4 +1,4 @@
-# WorkOut Buddy `Hands on Project`
+# WorkOut Buddy
 
 ## Description: 
 **Web-App to keep record of workout of each user based on entry by the user.**
