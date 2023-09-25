@@ -9,7 +9,7 @@
 Before you begin, ensure you have the following installed on your local machine:
 
 - [Docker](https://www.docker.com/get-started)
-- [NodeJS (LTS)](https://www.nodejs.com)
+- [NodeJS (LTS)](https://nodejs.org/)
 
 ## Tech Stack
 - **Development**
