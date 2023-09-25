@@ -17,7 +17,7 @@ Before you begin, ensure you have the following installed on your local machine:
    - Backend: Node.js, Express and Mongodb
 - **DevOps**
     - CI/CD: Github Actions
-    - Containerization: 
+    - Containerization: Docker
     
 ## Clone the Repository
 
