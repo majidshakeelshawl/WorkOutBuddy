@@ -35,7 +35,7 @@ You can clone this public repository using the following steps:
 
     `cd WorkOutBuddy`
 
-5. Run following command to install both client and server packages
+5. Run following command to install both client and server packages (To run app manually without docker)
 
     `npm run install`
 
